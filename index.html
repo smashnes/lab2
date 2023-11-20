@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Задание 2</title>
+  
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  
+  <style>
+	.bg {
+		background-color:#fadadd;
+	}
+	.center {
+		font-size: 14pt;
+		text-align: center;
+		font-family: "Roboto", sans-serif;
+	}
+	.big-picture {
+		margin-left: auto;
+		margin-right: auto;
+		height: 500px;
+	}
+	.min-picture {
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-top: 50px;
+		height: 100px;
+	}
+	.slick-next {
+		right: 10px;
+	}
+	.slick-prev {
+		left: 10px;
+	}
+  </style>
+  
+  </head>
+  <body class="bg">
+	<header class="center">
+		<h1>Пример использования библиотеки Slick</h1>
+	</header>
+	
+	<div class="cars">
+		<div><img class="big-picture" src="pics/pic1.webp"></div>
+		<div><img class="big-picture" src="pics/pic2.webp"></div>
+		<div><img class="big-picture" src="pics/pic3.webp"></div>
+		<div><img class="big-picture" src="pics/pic4.webp"></div>
+		<div><img class="big-picture" src="pics/pic5.webp"></div>
+	</div>
+	<div class="cars-min">
+		<div><img class="min-picture" src="pics/pic1.webp"></div>
+		<div><img class="min-picture" src="pics/pic2.webp"></div>
+		<div><img class="min-picture" src="pics/pic3.webp"></div>
+		<div><img class="min-picture" src="pics/pic4.webp"></div>
+		<div><img class="min-picture" src="pics/pic5.webp"></div>
+	</div>
+	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <script>
+    $('.cars').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		fade: true,
+		asNavFor: '.cars-min'
+	});
+	$('.cars-min').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		asNavFor: '.cars',
+		dots: true,
+		centerMode: true,
+		focusOnSelect: true
+	});
+  </script>
+
+  </body>
+</html>
